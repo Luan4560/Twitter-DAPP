@@ -1,5 +1,4 @@
 /// <reference types="vite/client" />
-
 // Describes metadata related to a provider based on EIP-6963.
 interface EIP6963ProviderInfo {
   walletId: string;
@@ -46,4 +45,13 @@ type EIP6963AnnounceProviderEvent = {
 interface MMError {
   code?: string;
   message?: string;
+}
+
+interface Window {
+  ethereum?: {
+    isCoinbaseWallet?: true;
+    isMetaMask?: true;
+    autoRefreshOnNetworkChange?: boolean;
+    isBraveWallet?: true;
+  };
 }
